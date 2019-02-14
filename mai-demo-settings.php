@@ -5,7 +5,7 @@
  * Plugin URI:      https://maitheme.com/
  * Description:     Mai Demo Settings plugin
  *
- * Version:         0.1.2
+ * Version:         0.1.3
  *
  * GitHub URI:      https://github.com/maithemewp/mai-demo-settings/
  *
@@ -93,7 +93,7 @@ final class MaiBC_Plugin {
 
 		// Plugin version.
 		if ( ! defined( 'MAI_BOXED_CONTAINERS_VERSION' ) ) {
-			define( 'MAI_BOXED_CONTAINERS_VERSION', '0.1.2' );
+			define( 'MAI_BOXED_CONTAINERS_VERSION', '0.1.3' );
 		}
 
 		// Plugin Folder Path.

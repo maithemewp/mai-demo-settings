@@ -49,17 +49,23 @@
 	font-size: 15px;
 	color: rgba(0,0,0,0.6);
 	font-weight: 400;
+	text-transform: none;
 	margin-bottom: 12px;
 }
 
 .maids-settings label {
 	display: block;
+	text-transform: none;
 	margin-bottom: 6px;
 }
 
 .maids-settings label:hover,
 .maids-settings label:focus {
 	cursor: pointer;
+}
+
+.nav-primary .maids-toggle {
+	margin-left: auto;
 }
 
 .maids-toggle:hover svg,
