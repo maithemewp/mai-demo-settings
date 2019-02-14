@@ -213,6 +213,8 @@ final class MaiBC_Plugin {
 
 		$disabled = array();
 
+		$sections = is_page_template( 'sections.php' );
+
 		if ( is_singular( array( 'page', 'post' ) ) ) {
 			$layout = genesis_site_layout();
 			// If layout does not contains sidebar.
@@ -222,12 +224,16 @@ final class MaiBC_Plugin {
 			}
 		}
 
-		if ( ! is_singular( array( 'page', 'post' ) ) ) {
+		if ( ! is_singular( array( 'page', 'post' ) ) || $sections ) {
 			$disabled[] = 'entry_singular';
 		}
 
 		if ( ! ( is_home() || is_category() || is_tag() || is_search() ) ) {
 			$disabled[] = 'entry_archive';
+		}
+
+		if ( $sections ) {
+			$disabled[] = 'content';
 		}
 
 		$html  = '';
