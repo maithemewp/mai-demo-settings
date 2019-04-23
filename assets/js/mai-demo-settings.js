@@ -11,20 +11,19 @@ jQuery(document).ready(function($) {
 	var $searchEntries      = $( '.search .content .entry' );
 	var $sidebar            = $( '.sidebar' );
 	var $sidebarWidgets     = $( '.sidebar > .widget' );
-	var $menuItem           = $icon.parents( '.menu-item' );
-	var $menuLink           = $menuItem.find( 'a' );
+	var $menuItem           = $icon.closest( '.menu-item' );
+
+	// Fade in the icon.
+	$icon.animate({opacity: 1}, 500 );
 
 	// Add settings HTML.
 	$menuItem.addClass( 'maids-toggle' ).append( maidsVars.html );
 
-	// Settings.
-	var $settings = $menuLink.next( '.maids-settings' );
-
 	// Open/Close.
-	$menuLink.on( 'click', function(e) {
+	$menuItem.on( 'click', 'a', function(e) {
 		e.preventDefault();
-		$menuItem.toggleClass( 'open' );
-		$settings.fadeToggle( 'fast' );
+		$(this).parent( '.menu-item' ).toggleClass( 'open' );
+		$(this).next( '.maids-settings' ).fadeToggle( 'fast' );
 	});
 
 	// Site Container.
